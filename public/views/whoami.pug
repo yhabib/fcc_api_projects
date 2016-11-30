@@ -2,14 +2,14 @@ include ./includes/header.pug
 
 body
     .container
-        h1.header API Project: Request Header Parser Microservice
-        blockquote User stories:
+        h1.header.page-header API Project: Request Header Parser Microservice
+        h3 User stories:
+        blockquote 
             ol
                 li I can get the IP address, language and operating system for my browser
         
-        .jumbotron
-            h3 Output:
-            code
+        h3 Output:
+        code
                 |  { 
                 |       "ipAddress": #{ip},
                 |       "language": #{lan},
