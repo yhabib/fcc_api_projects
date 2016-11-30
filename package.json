@@ -2,9 +2,9 @@
   "name": "fcc_api_projects",
   "version": "1.0.0",
   "description": "Five microservices with different funcitonality",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test.js"
   },
   "keywords": [
     "nodejs",
@@ -16,5 +16,9 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.2.0",
+    "supertest": "^2.0.1"
   }
 }

@@ -1,0 +1,1 @@
+To make www executable: chmod +x <file>
