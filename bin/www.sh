@@ -1,4 +1,4 @@
-#!/usr/bin/env nodemon
+#!/usr/bin/env node
 
 var app = require('./../app'),
     port = process.env.PORT || 3000;
