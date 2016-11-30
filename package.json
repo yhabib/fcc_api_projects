@@ -1,0 +1,20 @@
+{
+  "name": "fcc_api_projects",
+  "version": "1.0.0",
+  "description": "Five microservices with different funcitonality",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb",
+    "bootstrap"
+  ],
+  "author": "yhabib",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
