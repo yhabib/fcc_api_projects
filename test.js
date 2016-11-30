@@ -86,6 +86,18 @@ describe('Request to the timestampt path with a parameter', done => {
 
 
 /************************************************************
- * DEPENDENCIES *
+ * WHOAMI *
 ************************************************************/
 
+describe('Request to the whoami path', () => {
+    it('expects a 200 status code', done => {
+        request(app)
+            .get('/whoami')
+            .expect(200, done);
+    });
+    it('expects a content-type html/text', done => {
+        request(app)
+            .get('/whoami')
+            .expect('Content-Type', /text\/html/, done);
+    });
+});

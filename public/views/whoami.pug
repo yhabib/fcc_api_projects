@@ -1,0 +1,19 @@
+include ./includes/header.pug
+
+body
+    .container
+        h1.header API Project: Request Header Parser Microservice
+        blockquote User stories:
+            ol
+                li I can get the IP address, language and operating system for my browser
+        
+        .jumbotron
+            h3 Output:
+            code
+                |  { 
+                |       "ipAddress": #{ip},
+                |       "language": #{lan},
+                |       "software": #{os} 
+                |  }
+
+include ./includes/footer.pug
