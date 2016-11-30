@@ -1,1 +1,2 @@
-To make www executable: chmod +x <file>
+To make www executable: chmod +x <file> 
+    executate-> ./bin/www
