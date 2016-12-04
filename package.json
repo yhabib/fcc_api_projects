@@ -1,10 +1,10 @@
 {
   "name": "fcc_api_projects",
   "version": "1.0.0",
-  "description": "Five microservices with different funcitonality",
-  "main": "app.js",
+  "description": "Five microservices with different functionality",
+  "main": "server.js",
   "scripts": {
-    "test": "mocha -w app.js test.js routes/**"
+    "test": "mocha -w server.js test.js routes/**"
   },
   "keywords": [
     "nodejs",
