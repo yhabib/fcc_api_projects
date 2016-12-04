@@ -6,7 +6,33 @@ body {
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
+    font-size: 62,5%;       /* 1 rem --> 10px */
 }
+
+.exercise {
+    margin: 6rem 0 6rem;
+}
+.solution {
+    border: 1px solid darkgray;
+}
+.solution.jumbotron {
+    padding-top: 1rem;
+}
+.solution h3 {
+    width: 80%;
+    border-bottom: 1px solid darkgray;
+}
+ul {
+    padding-left: 1rem;
+}
+ul li {
+    list-style-type: none;
+
+}
+li code {
+    padding: 1rem;
+}
+
 
 footer {
     text-align: center;

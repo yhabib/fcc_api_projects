@@ -3,17 +3,20 @@ include ./includes/header.pug
 body
     .container
         h1.page-header API Project: Request Header Parser Microservice
-        h3 User stories:
-        blockquote 
-            ol
-                li I can get the IP address, language and operating system for my browser
+        .exercise
+            h3 User stories:
+            blockquote 
+                ol
+                    li I can get the IP address, language and operating system for my browser
         
-        h3 Output:
-        code
-                |  { 
-                |       "ipAddress": #{ip},
-                |       "language": #{lan},
-                |       "software": #{os} 
-                |  }
+        .solution.jumbotron
+            .container-fluid
+                h3 Output:
+                code
+                        |  { 
+                        |       "ipAddress": #{ip},
+                        |       "language": #{lan},
+                        |       "software": #{os} 
+                        |  }
 
 include ./includes/footer.pug
