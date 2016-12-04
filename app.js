@@ -4,6 +4,7 @@ var express = require('express'),
     home = require('./routes/home'),
     timestampt = require('./routes/timestampt'),
     whoami = require('./routes/whoami'),
+    minifurl = require('./routes/minifurl'),
     app = express(); 
 
 app.use(express.static('public'))
@@ -11,6 +12,7 @@ app.use(express.static('public'))
    .set('view engine', 'pug')
    .use('/', home)
    .use('/timestampt', timestampt)
-   .use('/whoami', whoami);
+   .use('/whoami', whoami)
+   .use('/minifurl', minifurl);
 
 module.exports = app;
