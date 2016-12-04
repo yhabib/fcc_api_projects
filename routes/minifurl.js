@@ -1,5 +1,6 @@
 var express = require('express'),
-    router = express.Router();
+    router = express.Router(),
+    helpers = require('./../helpers/helpers');
 
 router
     .route('/')
@@ -7,64 +8,56 @@ router
         res.render('minifurl');
     });
 
+router
+    .route('/all')
+    .get((req, res) => {
+        var db = req.db,
+            collection = req.db.collection('minifurl');
+        
+        collection.find().toArray((err, doc) => {
+            if(err) throw err;
+            res.json(doc);
+        });
+    })
+
 // wildcard routing technique
 router
-    .route('/*')
+    .route('/new/:url(*)')
+    .get((req, res) => {                
+        var url = req.params.url,
+            db = req.db,
+            collection = db.collection('minifurl');
+        
+        if(helpers.validUrl(url)) {
+            var obj = {
+                original_url: url,
+                minify_url: helpers.generateHashKey(url)
+            };
+            
+            collection.update( { key: obj.key }, obj, { upsert: true });
+            res.json({
+                original_url: obj.original_url,
+                minify_url: `${req.protocol}://${req.headers.host}/minifurl/${obj.minify_url}`
+            });
+        }
+        else
+            res.send('The Url has a no valid format'); 
+    });
+
+router
+    .route('/:url(*)')
     .get((req, res) => {        
-        var url = req.params[0],
+        var url = req.params.url,
             db = req.db,
             collection = db.collection('minifurl');
 
-        if(!isNormalUrl(url)) {
-            collection
-                .find(
-                    { minify_url: url }
-                )
-                .toArray((err, document) => {
-                    if(err) throw err;
-                    else  
-                        document[0] ? 
-                            res.redirect(document[0].original_url) :
-                            res.json({error: "The url is not in the DB"});
-                });
-        }
-
-        else {
-            var doc = {
-                original_url: url,
-                minify_url: shortUrl(url)
-            };
-
-            collection
-                .aggregate(
-                    { $project: {original_url: 1, minify_url: 1, _id: 0}},
-                    { $match: {original_url: doc.original_url}}
-                )
-                .toArray((err, documents) => {
-                    if(err) throw err;
-                    if(documents.length === 0)
-                        collection.insert(doc);
-                    else    
-                        res.json(documents[0]);
-                });
-        }
+        collection
+            .find({ minify_url: url })
+            .toArray((err, docs) => {              
+                if(err) throw err;
+                if(docs.length === 0) res.send("No entry in the DB founded");
+                else res.redirect(docs[0].original_url); 
+            });
     });
 
-// 1. Split the url and take the server part
-// 2. Three first characters
-// 3. Plus random_numer
-// 4. www.google.es -> goo_21
-function shortUrl(url) {
-    var code = url.split('.')[1].slice(0,3),
-        random = Math.floor(Math.random() * 1000);
-
-    return `${code}_${random}`;
-}
-
-// Returns true if the url has one of the key words
-function isNormalUrl(url) {
-    const keys = ["www", "http", "https"];
-
-    return keys.some(key => url.indexOf(key) > -1 );
-} 
 module.exports = router;
