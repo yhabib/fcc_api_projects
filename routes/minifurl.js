@@ -34,7 +34,7 @@ router
                 minify_url: helpers.generateHashKey(url)
             };
             
-            collection.update( { key: obj.key }, obj, { upsert: true });
+            collection.update( { original_url: obj.original_url }, obj, { upsert: true });
             res.json({
                 original_url: obj.original_url,
                 minify_url: `${req.protocol}://${req.headers.host}/minifurl/${obj.minify_url}`
