@@ -43,7 +43,7 @@ router
             collection = req.db.collection('imagesearch');
         
         collection
-            .find()
+            .find({},{_id: false})
             .toArray((err, docs) => {
                 if(err) throw err;
                 if(docs.length === 0)  res.send('The DB has no entries yet');
