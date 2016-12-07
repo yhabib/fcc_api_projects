@@ -1,7 +1,6 @@
 var express = require('express'),
     request = require('request'),
     router = express.Router(),
-    http = require('http'),
     apiKey = process.env.MSDN_BING_SEARCH_KEY;
 
 router
