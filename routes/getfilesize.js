@@ -7,7 +7,7 @@ var express = require('express'),
 router
     .route('/')
     .get((req, res) => {
-        res.render('getfilesize', {name: name, size: size});
+        res.render('getfilesize');
     })
     .post(upload.single('load'), (req, res) => {
         let name = req.file.originalname.split('.');
