@@ -9,6 +9,7 @@ var express = require('express'),
     whoami = require('./routes/whoami'),
     minifurl = require('./routes/minifurl'),
     imagesearch = require('./routes/imagesearch'),
+    getfilesize = require('./routes/getfilesize'),
     app = express(); 
     
 
@@ -25,7 +26,8 @@ var express = require('express'),
                .use('/timestampt', timestampt)
                .use('/whoami', whoami)
                .use('/minifurl', minifurl)
-               .use('/imagesearch', imagesearch);
+               .use('/imagesearch', imagesearch)
+               .use('/getfilesize', getfilesize);
         }
     });
 

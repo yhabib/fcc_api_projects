@@ -20,7 +20,15 @@ body {
 }
 .solution h3 {
     width: 80%;
+    margin-bottom: 2rem;
     border-bottom: 1px solid darkgray;
+}
+
+.solution .col-xs-12 {
+    margin-bottom: 5rem;
+}
+.solution .col-xs-12:last-child {
+    margin-bottom: 0rem;
 }
 ul {
     padding-left: 1rem;
@@ -31,6 +39,10 @@ ul li {
 }
 li code {
     padding: 1rem;
+}
+
+form input[type=file] {
+    margin-right: 3rem;
 }
 
 
