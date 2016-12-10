@@ -3,27 +3,27 @@
 
 
 ### End Points:
-> * Timestamp Microservicea 
-> * Request Header Parser Microservice 
-> * URL Shortener Microservice 
-> * Image Search Abstraction Layer 
-> * File Metadata Microservice 
+* Timestamp Microservicea 
+* Request Header Parser Microservice 
+* URL Shortener Microservice 
+* Image Search Abstraction Layer 
+* File Metadata Microservice 
 
 ### Specifications:
-> * Front End:
->   * PUG(Jade)
->   * Bootstrap3
-> * Back End:
->   * NodeJS
->   * Express
->   * Request
->   * Multer
-> * Testing:
->   * Mocha
->   * Supertest
-> * Other
->   * MongoDB + mLab
->   * Heroku
+* Front End:
+  * PUG(Jade)
+  * Bootstrap3
+* Back End:
+  * NodeJS
+  * Express
+  * Request
+  * Multer
+* Testing:
+  * Mocha
+  * Supertest
+* Other
+  * MongoDB + mLab
+  * Heroku
 
 ### To do:
-> * Tests :(
+* Tests :(
