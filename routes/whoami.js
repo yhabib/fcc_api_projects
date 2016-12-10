@@ -5,11 +5,11 @@ var express = require('express'),
 router
     .route('/')
     .get((req, res) => {
-        let ip = req.get('host'),
+        let ip = req.ip,
             lan = req.get('accept-language'),
             os = req.get('user-agent');
-        if(lan) lan = lan.split(',')[0];
-        if(os) os = os.slice(req.get('user-agent').indexOf('(') + 1, req.get('user-agent').indexOf(')'))
+        lan = lan ? lan.split(',')[0] : null;
+        os = os ? os.slice(req.get('user-agent').indexOf('(') + 1, req.get('user-agent').indexOf(')')) : null;
 
         res.render('whoami', {ip: ip, lan: lan, os: os});
     });

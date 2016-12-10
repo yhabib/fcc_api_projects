@@ -5,7 +5,7 @@ var express = require('express'),
     mongoUserPsw = process.env.MONGO_USER_PSW,
     url = `mongodb://${mongoUserPsw}@ds119748.mlab.com:19748/fcc_api_projects`;
     home = require('./routes/home'),
-    timestampt = require('./routes/timestampt'),
+    timestamp = require('./routes/timestamp'),
     whoami = require('./routes/whoami'),
     minifurl = require('./routes/minifurl'),
     imagesearch = require('./routes/imagesearch'),
@@ -13,23 +13,23 @@ var express = require('express'),
     app = express(); 
     
 
-    mongo.connect(url, (err, db) => {
-        if(err) 
-            throw err;
-        else {
-            console.log( 'Success: Connected to DB' );
-            app.use((req, res, next) => {
-                req.db = db;
-                next();
-            })
-               .use('/', home)
-               .use('/timestampt', timestampt)
+    // mongo.connect(url, (err, db) => {
+    //     if(err) 
+    //         throw err;
+    //     else {
+    //         console.log( 'Success: Connected to DB' );
+    //         app.use((req, res, next) => {
+    //             req.db = db;
+    //             next();
+    //         })
+               app.use('/', home)
+               .use('/timestamp', timestamp)
                .use('/whoami', whoami)
                .use('/minifurl', minifurl)
                .use('/imagesearch', imagesearch)
                .use('/getfilesize', getfilesize);
-        }
-    });
+    //     }
+    // });
 
 app.use(express.static('public'))
    .set('views', path.join(__dirname, 'public/views'))

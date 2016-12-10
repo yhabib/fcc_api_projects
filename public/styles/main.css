@@ -40,6 +40,9 @@ ul li {
 li code {
     padding: 1rem;
 }
+ul.index li {
+    list-style-type: disc;
+}
 
 form input[type=file] {
     margin-right: 3rem;

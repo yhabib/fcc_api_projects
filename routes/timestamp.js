@@ -7,7 +7,7 @@ var express = require('express'),
 router
     .route('/')
     .get((req, res) => {
-        res.render('timestampt');
+        res.render('timestamp');
     });
 
 router
@@ -16,10 +16,8 @@ router
         const ts = req.params.timestamp,
               date = ts.match(/^\d*$/) ? new Date(+ts) : new Date(ts); // +ts returns a number
         
-        if(!isNaN(date)) 
-            res.json({natural: `${monthNames[date.getMonth()]} ${date.getDay()}, ${date.getFullYear()}`, unix: date.getTime()});
-        else
-            res.json({natural: null, unix: null});
+        isNaN(date) ? res.json({natural: null, unix: null}) :
+                      res.json({natural: `${monthNames[date.getMonth()]} ${date.getDay()}, ${date.getFullYear()}`, unix: date.getTime()});
     });
 
 

@@ -20,7 +20,11 @@ router
         });
     })
 
-// wildcard routing technique
+// Wildcard routing technique
+// 1. Check if the url has a valid formate(regExp)
+// 2. Generate uniqueKey
+// 3. Save it into DB
+// 4. Send it as json
 router
     .route('/new/:url(*)')
     .get((req, res) => {                
@@ -55,8 +59,7 @@ router
             .find({ minify_url: url })
             .toArray((err, docs) => {              
                 if(err) throw err;
-                if(docs.length === 0) res.send("No entry in the DB founded");
-                else res.redirect(docs[0].original_url); 
+                !!docs.length ? res.redirect(docs[0].original_url) : res.send("No entry in the DB founded");
             });
     });
 

@@ -9,6 +9,9 @@ router
         res.render('imagesearch');
     });
 
+//  1. Make the request and if it has no errors
+//  2. save into the db  
+//  3.Sent it as json
 router
     .route('/search/:query')
     .get((req, res) => {
@@ -35,6 +38,8 @@ router
             });
     });
 
+// Looking through the DB with a projection to make it lighter
+// !! -> Converts to boolean and makes boolean operations !![] === false, !![1, 2, 3] === true  
 router
     .route('/latest')
     .get((req, res) => {
@@ -45,8 +50,7 @@ router
             .find({},{_id: false})
             .toArray((err, docs) => {
                 if(err) throw err;
-                if(docs.length === 0)  res.send('The DB has no entries yet');
-                else res.json(docs);
+                !!docs.length ? res.json(docs) : res.send('The DB has no entries yet');
             });
         
     }); 

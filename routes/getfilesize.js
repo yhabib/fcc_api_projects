@@ -3,7 +3,6 @@ var express = require('express'),
     router = express.Router(),
     upload = multer({ });
 
-
 router
     .route('/')
     .get((req, res) => {

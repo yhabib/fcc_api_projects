@@ -1,37 +1,36 @@
 include ./includes/header.pug
 
-body
-    .container
-        h1.page-header API Project: URL Shortener Microservice
-        .exercise
-            h3 User stories:
-            blockquote 
-                ol
-                    li I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.
-                    li When I visit that shortened URL, it will redirect me to my original link.
-                    li Entering a non-valid url generates a error message 
-                    li Visiting /all shows all the url & minificated stored in the db
-        .solution.jumbotron
-            .container-fluid
-                .col-xs-12.col-md-6
-                    h3 Example usage:
-                    ul
-                        li: a(href="./minifurl/new/https://www.google.es", target="_blank")
-                            code ./minifurl/new/https://www.google.es
-                        br
-                        li: a(href="./minifurl/new/1450134000000", target="_blank")
-                            code ./minifurl/new/1450134000000
-                        br
-                        li: a(href="./minifurl/all", target="_blank")
-                            code ./minifurl/all
+.container
+    h1.page-header URL Shortener Microservice
+    .exercise
+        h3 User stories:
+        blockquote 
+            ol
+                li I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.
+                li When I visit that shortened URL, it will redirect me to my original link.
+                li Entering a non-valid url generates a error message 
+                li Visiting /all shows all the url & minificated stored in the db
+    .solution.jumbotron
+        .container-fluid
+            .col-xs-12.col-md-6
+                h3 Example usage:
+                ul
+                    li: a(href="./minifurl/new/https://www.google.es", target="_blank")
+                        code ./minifurl/new/https://www.google.es
+                    br
+                    li: a(href="./minifurl/new/1450134000000", target="_blank")
+                        code ./minifurl/new/1450134000000
+                    br
+                    li: a(href="./minifurl/all", target="_blank")
+                        code ./minifurl/all
 
-                .col-xs-12.col-md-6
-                    h3 Example of minified Url:
-                    ul 
-                        li: a(href="./minifurl/goo_+PXq", target="_blank")
-                            code ./minifurl/goo_+PXq
-                        br
-                        li: a(href="./minifurl/fre_wB6G", target="_blank")
-                            code ./minifurl/fre_wB6G
+            .col-xs-12.col-md-6
+                h3 Example of minified Url:
+                ul 
+                    li: a(href="./minifurl/goo_+PXq", target="_blank")
+                        code ./minifurl/goo_+PXq
+                    br
+                    li: a(href="./minifurl/fre_wB6G", target="_blank")
+                        code ./minifurl/fre_wB6G
 
 include ./includes/footer.pug

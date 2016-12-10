@@ -1,28 +1,27 @@
 include ./includes/header.pug
 
-body
-    .container
-        h1.page-header API Project: File Metadata Microservice
-        .exercise
-            h3 User stories:
-            blockquote 
-                ol
-                    li I can submit a FormData object that includes a file upload.
-                    li When I submit something, I will receive the file size in bytes within the JSON response    
+.container
+    h1.page-header File Metadata Microservice
+    .exercise
+        h3 User stories:
+        blockquote 
+            ol
+                li I can submit a FormData object that includes a file upload.
+                li When I submit something, I will receive the file size in bytes within the JSON response   
 
-        .solution.jumbotron
-            .container-fluid
-                .col-xs-12
-                    h3 File to be uploaded
-                    form(action="/getfilesize" method="post", enctype="multipart/form-data").form-inline
-                        .form-group
-                            input(type="file", name="load").form-control
-                            input(type="submit", value="upload").btn.btn-default.btn-file
-                
-                .col-xs-12
-                    h3 Output
-                    p File name: #{name}
-                    p File format: #{format}
-                    p File size: #{size} mB
+    .solution.jumbotron
+        .container-fluid
+            .col-xs-12
+                h3 File to be uploaded
+                form(action="/getfilesize" method="post", enctype="multipart/form-data").form-inline
+                    .form-group
+                        input(type="file", name="load").form-control
+                        input(type="submit", value="upload").btn.btn-default.btn-file
+            
+            .col-xs-12
+                h3 Output
+                p File name: #{name}
+                p File format: #{format}
+                p File size: #{size} mB
 
 include ./includes/footer.pug
