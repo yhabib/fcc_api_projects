@@ -7,9 +7,11 @@
     "test": "mocha -w server.js test.js routes/**"
   },
   "keywords": [
+    "freecodecamp",
     "nodejs",
     "express",
     "mongodb",
+    "jade",
     "bootstrap"
   ],
   "author": "yhabib",
