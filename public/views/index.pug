@@ -1,27 +1,30 @@
 include ./includes/header.pug
 
-.container
+.container.content
     h1.page-header FCC - Back End Development Certification
-    h2 API project: A set of end points to hade different types of requests
+    .exercise
+        h2 Api Project:
+        blockquote 
+           p A set of end points to handle different types of requests
 
     .container-fluid
         .col-xs-12.col-sm-6
             h3.lead.page-header End Points:
             ul.index
-                li Timestamp Microservicea <a href="/timestamp"><i class="glyphicon glyphicon-send"></i>*</a> 
-                li Request Header Parser Microservice  <a href="/whoami"><i class="glyphicon glyphicon-send"></i>*</a> 
-                li URL Shortener Microservice   <a href="/minifurl"><i class="glyphicon glyphicon-send"></i>*</a> 
-                li Image Search Abstraction Layer   <a href="/imagesearch"><i class="glyphicon glyphicon-send"></i>*</a> 
-                li File Metadata Microservice   <a href="/getfilesize"><i class="glyphicon glyphicon-send"></i>*</a> 
+                li: p Timestamp Microservices <a href="/timestamp"><i class="glyphicon glyphicon-send"></i></a> 
+                li: p Request Header Parser Microservice  <a href="/whoami"><i class="glyphicon glyphicon-send"></i></a> 
+                li: p URL Shortener Microservice   <a href="/minifurl"><i class="glyphicon glyphicon-send"></i></a> 
+                li: p Image Search Abstraction Layer   <a href="/imagesearch"><i class="glyphicon glyphicon-send"></i></a> 
+                li: p File Metadata Microservice   <a href="/getfilesize"><i class="glyphicon glyphicon-send"></i></a> 
 
 
         .col-xs-12.col-sm-6
             h3.lead.page-header Specifications:
-            ul.index
+            ul.index.tech
                 li Front End:
                     ul
-                        li PUG(Jade)
-                        li Bootstrap3
+                        li Pug(Jade)
+                        li Bootstrap
                 li Back End:
                     ul
                         li NodeJS

@@ -1,9 +1,9 @@
 include ./includes/header.pug
 
-.container
+.container.content
     h1.page-header File Metadata Microservice
     .exercise
-        h3 User stories:
+        h2 User stories:
         blockquote 
             ol
                 li I can submit a FormData object that includes a file upload.
@@ -12,14 +12,14 @@ include ./includes/header.pug
     .solution.jumbotron
         .container-fluid
             .col-xs-12
-                h3 File to be uploaded
+                h3.lead File to be uploaded
                 form(action="/getfilesize" method="post", enctype="multipart/form-data").form-inline
                     .form-group
                         input(type="file", name="load").form-control
                         input(type="submit", value="upload").btn.btn-default.btn-file
             
             .col-xs-12
-                h3 Output
+                h3.lead Output
                 p File name: #{name}
                 p File format: #{format}
                 p File size: #{size} mB

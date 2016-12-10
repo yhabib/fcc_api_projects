@@ -1,9 +1,9 @@
 include ./includes/header.pug
 
-.container
+.container.content
     h1.page-header URL Shortener Microservice
     .exercise
-        h3 User stories:
+        h2 User stories:
         blockquote 
             ol
                 li I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.
@@ -13,7 +13,7 @@ include ./includes/header.pug
     .solution.jumbotron
         .container-fluid
             .col-xs-12.col-md-6
-                h3 Example usage:
+                h3.lead Example usage:
                 ul
                     li: a(href="./minifurl/new/https://www.google.es", target="_blank")
                         code ./minifurl/new/https://www.google.es
@@ -25,7 +25,7 @@ include ./includes/header.pug
                         code ./minifurl/all
 
             .col-xs-12.col-md-6
-                h3 Example of minified Url:
+                h3.lead Example of minified Url:
                 ul 
                     li: a(href="./minifurl/goo_+PXq", target="_blank")
                         code ./minifurl/goo_+PXq

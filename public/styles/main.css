@@ -3,12 +3,23 @@ html, body {
     width: 100%;
 }
 body {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
     font-size: 62,5%;       /* 1 rem --> 10px */
 }
-
+h3.lead {
+    font-size: 2.4rem;
+}
+header {
+    height: 5.2rem;
+}
+.content {
+    height: calc(100% - 5.2rem - 5rem);
+}
+footer {
+    height: 3rem;
+}
+.navbar-brand {
+    color: rgb(51, 122, 183);
+}
 .exercise {
     margin: 6rem 0 6rem;
 }
@@ -42,6 +53,19 @@ li code {
 }
 ul.index li {
     list-style-type: disc;
+    font-size: 1.7rem;
+    line-height: 3rem;
+}
+ul.tech>li {
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+ul.tech>li:first-child {
+    margin-top: 0;
+}
+ul.index li ul li {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
 }
 
 form input[type=file] {

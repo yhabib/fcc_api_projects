@@ -1,9 +1,9 @@
 include ./includes/header.pug
 
-.container
+.container.content
     h1.page-header Image Search Abstraction Layer
     .exercise
-        h3 User stories:
+        h2 User stories:
         blockquote 
             ol
                 li I can get the image URLs, alt text and page urls for a set of images relating to a given search string..
@@ -18,7 +18,7 @@ include ./includes/header.pug
     .solution.jumbotron
         .container-fluid
             .col-xs-12.col-md-6
-                h3 Example usage:
+                h3.lead Example usage:
                 ul
                     li: a(href="./imagesearch/search/lolcats%20funny?offset=10", target="_blank")
                         code ./imagesearch/search/lolcats%20funny?offset=10

@@ -1,16 +1,16 @@
 include ./includes/header.pug
 
-.container
+.container.content
     h1.page-header Request Header Parser Microservice
     .exercise
-        h3 User stories:
+        h2 User stories:
         blockquote 
             ol
                 li I can get the IP address, language and operating system for my browser
     
     .solution.jumbotron
         .container-fluid
-            h3 Output:
+            h3.lead Output:
             code
                     |  { 
                     |      "ipAddress": #{ip},
