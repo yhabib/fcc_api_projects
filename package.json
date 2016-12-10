@@ -16,7 +16,7 @@
     "mocha",
     "heroku"
   ],
-  "author": "yhabib",
+  "author": "Yusef Habib",
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0",
