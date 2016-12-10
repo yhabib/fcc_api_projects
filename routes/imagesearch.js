@@ -1,7 +1,10 @@
-var express = require('express'),
+const APIKEY = process.env.MSDN_BING_SEARCH_KEY;
+
+
+let express = require('express'),
     request = require('request'),
-    router = express.Router(),
-    apiKey = process.env.MSDN_BING_SEARCH_KEY;
+    router = express.Router();
+
 
 router
     .route('/')
@@ -15,7 +18,7 @@ router
 router
     .route('/search/:query')
     .get((req, res) => {
-        var query = req.params.query,
+        let query = req.params.query,
             offset = req.query.offset || 0,
             db = req.db,
             collection = req.db.collection('imagesearch'),
@@ -23,7 +26,7 @@ router
                 url: `https://api.cognitive.microsoft.com/bing/v5.0/images/search?offset=${offset}&q=${query}`,
                 headers: {
                     "Content-Type": "multipart/form-data",
-                    "Ocp-Apim-Subscription-Key": apiKey 
+                    "Ocp-Apim-Subscription-Key": APIKEY 
                 }
             };
             
@@ -43,7 +46,7 @@ router
 router
     .route('/latest')
     .get((req, res) => {
-        var db = req.db,
+        let db = req.db,
             collection = req.db.collection('imagesearch');
         
         collection

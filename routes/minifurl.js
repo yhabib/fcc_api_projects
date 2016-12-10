@@ -1,4 +1,4 @@
-var express = require('express'),
+let express = require('express'),
     router = express.Router(),
     helpers = require('./../helpers/helpers');
 
@@ -11,7 +11,7 @@ router
 router
     .route('/all')
     .get((req, res) => {
-        var db = req.db,
+        let db = req.db,
             collection = req.db.collection('minifurl');
         
         collection.find().toArray((err, doc) => {
@@ -19,6 +19,7 @@ router
             res.json(doc);
         });
     })
+
 
 // Wildcard routing technique
 // 1. Check if the url has a valid formate(regExp)
@@ -28,12 +29,12 @@ router
 router
     .route('/new/:url(*)')
     .get((req, res) => {                
-        var url = req.params.url,
+        let url = req.params.url,
             db = req.db,
             collection = db.collection('minifurl');
         
         if(helpers.validUrl(url)) {
-            var obj = {
+            let obj = {
                 original_url: url,
                 minify_url: helpers.generateHashKey(url)
             };
@@ -51,7 +52,7 @@ router
 router
     .route('/:url(*)')
     .get((req, res) => {        
-        var url = req.params.url,
+        let url = req.params.url,
             db = req.db,
             collection = db.collection('minifurl');
 

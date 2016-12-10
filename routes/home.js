@@ -1,5 +1,4 @@
-var express = require('express'),
-    os = require('os'),
+let express = require('express'),
     router = express.Router();
 
 

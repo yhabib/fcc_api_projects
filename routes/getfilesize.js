@@ -1,4 +1,4 @@
-var express = require('express'),
+let express = require('express'),
     multer = require('multer'),
     router = express.Router(),
     upload = multer({ });
