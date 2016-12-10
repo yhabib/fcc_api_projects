@@ -12,7 +12,9 @@
     "express",
     "mongodb",
     "jade",
-    "bootstrap"
+    "bootstrap",
+    "mocha",
+    "heroku"
   ],
   "author": "yhabib",
   "license": "ISC",
