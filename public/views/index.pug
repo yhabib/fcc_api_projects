@@ -2,10 +2,11 @@ include ./includes/header.pug
 
 .container.content
     h1.page-header FCC - Back End Development Certification
-    .exercise
+    .description
         h2 Api Project:
         blockquote 
            p A set of end points to handle different types of requests
+           p GitHub repository <a href="https://github.com/yhabib/fcc_api_projects"><i class="fa fa-github" aria-hidden="true"></i></a>
 
     .container-fluid
         .col-xs-12.col-sm-6
@@ -21,24 +22,26 @@ include ./includes/header.pug
         .col-xs-12.col-sm-6
             h3.lead.page-header Specifications:
             ul.index.tech
-                li Front End:
-                    ul
-                        li Pug(Jade)
-                        li Bootstrap
-                li Back End:
-                    ul
-                        li NodeJS
-                        li Express
-                        li Request
-                        li Multer
-                li Testing:
-                    ul
-                        li Mocha
-                        li Supertest
-                li Other
-                    ul
-                        li MongoDB + mLab
-                        li Heroku
+                .col-xs-12.col-sm-6
+                    li Front End:
+                        ul
+                            li Pug(Jade)
+                            li Bootstrap
+                    li Back End:
+                        ul
+                            li NodeJS
+                            li Express
+                            li Request
+                            li Multer
+                .col-xs-12.col-sm-6
+                    li Testing:
+                        ul
+                            li Mocha
+                            li Supertest
+                    li Other
+                        ul
+                            li MongoDB + mLab
+                            li Heroku
 
 
     
